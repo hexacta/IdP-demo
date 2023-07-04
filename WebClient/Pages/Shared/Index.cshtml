@@ -1,6 +1,8 @@
 ﻿@using Microsoft.AspNetCore.Authentication
 <h2>Claims</h2>
 
+<a asp-action="Secure">Access secure resource</a>
+
 <dl>
     @foreach (var claim in User.Claims)
     {

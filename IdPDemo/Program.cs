@@ -53,7 +53,7 @@ isBuilder.AddTestUsers(new List<TestUser>
     {
         Username = "bob",
         Password = "password",
-        SubjectId = "12345",
+        SubjectId = "4145314a-06b3-4aa8-853b-666719d916c7",
         IsActive = true
     }
 });
