@@ -1,11 +1,11 @@
 using IdentityServer4;
 using IdentityServer4.Models;
 using IdentityServer4.Test;
-using System.Security.Claims;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+builder.Services.AddControllersWithViews();
 var isBuilder = builder.Services.AddIdentityServer();
 isBuilder.AddInMemoryClients(new List<Client>
 {
@@ -14,30 +14,38 @@ isBuilder.AddInMemoryClients(new List<Client>
         ClientId = "machine2machine",
         ClientSecrets = { new Secret("secret".Sha256()) },
         AllowedGrantTypes = GrantTypes.ClientCredentials,
-        AllowedScopes = { "api1" }
+        AllowedScopes = { "app" }
     },
     new Client
     {
         ClientId = "userInteractive",
         ClientSecrets = { new Secret("secret".Sha256()) },
-        AllowedGrantTypes = GrantTypes.ClientCredentials,
-        AllowedScopes = 
-        { 
+        AllowedGrantTypes = GrantTypes.Code,
+        AllowedScopes =
+        {
             IdentityServerConstants.StandardScopes.OpenId,
-            "api1"
+            IdentityServerConstants.StandardScopes.Profile,
+            "user"
+        },
+        RedirectUris =
+        {
+            "https://localhost:4002/signin-oidc"
         }
     }
 });
 
 isBuilder.AddInMemoryApiScopes(new List<ApiScope>
 {
-    new ApiScope("api1", "MyApi")
+    new ApiScope("app", "app"),
+    new ApiScope("user", "user")
 });
 
 isBuilder.AddInMemoryIdentityResources(new List<IdentityResource> 
 { 
-    new IdentityResources.OpenId() 
+    new IdentityResources.OpenId(),
+    new IdentityResources.Profile()
 });
+
 
 isBuilder.AddTestUsers(new List<TestUser>
 { 
@@ -46,8 +54,7 @@ isBuilder.AddTestUsers(new List<TestUser>
         Username = "bob",
         Password = "password",
         SubjectId = "12345",
-        IsActive = true,
-        Claims = { new Claim("myClaim","myClaim") }
+        IsActive = true
     }
 });
 
@@ -57,9 +64,11 @@ isBuilder.AddDeveloperSigningCredential();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
-
-app.UseHttpsRedirection();
 app.UseIdentityServer();
+app.UseStaticFiles();
+app.UseRouting();
+app.MapControllers();
+app.MapDefaultControllerRoute();
 
 app.Run();
 

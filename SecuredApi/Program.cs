@@ -19,16 +19,13 @@ builder.Services.AddAuthorization(opt =>
     opt.AddPolicy("M2M", policy =>
     {
         policy.RequireAuthenticatedUser();
-        policy.RequireClaim("scope", "api1");
+        policy.RequireClaim("scope", "app");
     });
 });
 
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
-
-app.UseHttpsRedirection();
-
 var accounts = new Dictionary<Guid,int>()
 {
     { Guid.NewGuid(), 10 },
