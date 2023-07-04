@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.33530.505
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IdPServer", "IdPDemo\IdPServer.csproj", "{9AD0BBFA-D2D1-438A-81F3-8F78C6E98819}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SecuredApi", "SecuredApi\SecuredApi.csproj", "{0AAAA2B4-CA32-4C2E-AE14-86CA47108049}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Client", "Client\Client.csproj", "{01925878-5692-4B86-A7EA-D837EA9DD7EB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9AD0BBFA-D2D1-438A-81F3-8F78C6E98819}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9AD0BBFA-D2D1-438A-81F3-8F78C6E98819}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9AD0BBFA-D2D1-438A-81F3-8F78C6E98819}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9AD0BBFA-D2D1-438A-81F3-8F78C6E98819}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0AAAA2B4-CA32-4C2E-AE14-86CA47108049}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0AAAA2B4-CA32-4C2E-AE14-86CA47108049}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0AAAA2B4-CA32-4C2E-AE14-86CA47108049}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0AAAA2B4-CA32-4C2E-AE14-86CA47108049}.Release|Any CPU.Build.0 = Release|Any CPU
+		{01925878-5692-4B86-A7EA-D837EA9DD7EB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{01925878-5692-4B86-A7EA-D837EA9DD7EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{01925878-5692-4B86-A7EA-D837EA9DD7EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{01925878-5692-4B86-A7EA-D837EA9DD7EB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D33F5EB6-16CD-4586-9789-E224EFD40045}
+	EndGlobalSection
+EndGlobal
