@@ -2,7 +2,7 @@
 
 A simple demo for an Identity Provider service implementing IdentityServer4
 
-Read the article [here](https://engineering.hexacta.com)
+Read the article [here](https://engineering.hexacta.com/implementing-openid-connect-on-net-7-f3cc51f9d7fd)
 
 ## Solution projects
 
